@@ -41,7 +41,23 @@ db.students.find({ surName: { $regex: /h?|y?/ } })
 /* ============== Delete Documents ============= */
 
 // delete the student where name set to "Ido"
-
 db.students.deleteOne({ name: 'Ido' })
 
 // delete the student where date set to "02/04/1998"
+db.students.deleteOne({ birth: new ISODate('1998-04-02T22:00:00.000Z') })
+
+/* ============== Relationships ============= */
+
+db.users.insertOne({
+  username: 'GoodGuyGreg',
+  first_name: 'Good Guy',
+  last_name: 'Greg',
+})
+
+db.users.insertOne({
+  username: 'ScumbagSteve',
+  first_name: 'Scumbag',
+  last_name: 'Steve',
+})
+
+/* ============== Relationships ============= */
