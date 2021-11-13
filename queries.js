@@ -139,11 +139,16 @@ db.posts.find({})
 db.posts.find({ username: 'GoodGuyGreg' })
 
 // find all posts that was authored by "ScumbagSteve"
+db.posts.find({ username: 'ScumbagSteve' })
 
 // find all comments
+db.comments.find({})
 
 // find all comments that was authored by "GoodGuyGreg"
+db.comments.find({ username: 'GoodGuyGreg' })
 
 // find all comments that was authored by "ScumbagSteve"
+db.comments.find({ username: 'ScumbagSteve' })
 
 // find all comments belonging to the post "Reports a bug in your code"
+db.comments.find({ post: '618e8946f3c439dad857ce8f' })
