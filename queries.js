@@ -60,4 +60,90 @@ db.users.insertOne({
   last_name: 'Steve',
 })
 
-/* ============== Relationships ============= */
+/* ============== Posts and Comments collections ============= */
+
+db.posts.insert([
+  {
+    username: 'GoodGuyGreg',
+    title: 'Passes out at party',
+    body: 'Wakes up early and cleans house',
+  },
+  {
+    username: 'GoodGuyGreg',
+    title: 'Steals your identity',
+    body: 'Raises your credit score',
+  },
+
+  {
+    username: 'GoodGuyGreg',
+    title: 'Reports a bug in your code',
+    body: 'Sends you a Pull Request',
+  },
+
+  {
+    username: 'ScumbagSteve',
+    title: 'Borrows something',
+    body: 'Sells it',
+  },
+
+  {
+    username: 'ScumbagSteve',
+    title: 'Borrows everything',
+    body: 'The end',
+  },
+
+  {
+    username: 'ScumbagSteve',
+    title: 'Forks your repo on github',
+    body: 'Sets to private',
+  },
+])
+
+db.comments.insert([
+  {
+    username: 'GoodGuyGreg',
+    comment: 'Hope you got a good deal!',
+    post: '618e5143ba4dd92cd88603eb',
+  },
+  {
+    username: 'GoodGuyGreg',
+    comment: "What's mine is yours!",
+    post: '618e5143ba4dd92cd88603ec',
+  },
+  {
+    username: 'GoodGuyGreg',
+    comment: "Don't violate the licensing agreement!",
+    post: '618e5143ba4dd92cd88603ed',
+  },
+  {
+    username: 'ScumbagSteve',
+    comment: "It still isn't clean",
+    post: '618e5143ba4dd92cd88603e8',
+  },
+  {
+    username: 'ScumbagSteve',
+    comment: 'Denied your PR cause I found a hack',
+    post: '618e5143ba4dd92cd88603ea',
+  },
+])
+
+/* ============== Queries ============= */
+
+// find all users
+db.users.find({})
+
+// find all posts
+db.posts.find({})
+
+// find all posts that was authored by "GoodGuyGreg"
+db.posts.find({ username: 'GoodGuyGreg' })
+
+// find all posts that was authored by "ScumbagSteve"
+
+// find all comments
+
+// find all comments that was authored by "GoodGuyGreg"
+
+// find all comments that was authored by "ScumbagSteve"
+
+// find all comments belonging to the post "Reports a bug in your code"
